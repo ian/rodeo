@@ -1,15 +1,14 @@
 ---
 description: >-
-  Token Rodeo is built with customization and theme ability in mind. While a
-  default theme is provided, we hope that developers and designers take it even
-  further!
+  Rodeo is built with customization and theme ability in mind. While a default
+  theme is provided, we hope that developers and designers take it even further!
 ---
 
 # Overview
 
 ## Theme development
 
-The themes in Token Rodeo are built with the Handlebars templating language which enables a lot of customization without a lot of overhead. When running a build, everything is compiled into a static site that's blazing fast.
+The themes in Rodeo are built with the Handlebars templating language which enables a lot of customization without a lot of overhead. When running a build, everything is compiled into a static site that's blazing fast.
 
 ## Handlebars
 

@@ -22,7 +22,7 @@ This can be used if you want to have a homepage that doesn't just land directly 
 
 ### token.hbs
 
-This template is used to display a single token, which is used alongisde `default.hbs`. It uses the {{\#token}} helper to add all of the various metadata and details about the token.
+This template is used to display a single token, which is used alongisde `default.hbs`. It uses the `{{#token}}` helper to add all of the various metadata and details about the token.
 
 ### tag.hbs
 
@@ -42,6 +42,6 @@ This is an optional theme for error-code specific pages. So if you want to set u
 
 ### **robots.txt**
 
-By default, Token Rodeo sets you up with a `robots.txt` file, but if you'd like to customize it this is where you'd do it.  
+By default, Rodeo sets you up with a `robots.txt` file, but if you'd like to customize it this is where you'd do it.  
 
 

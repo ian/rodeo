@@ -1,24 +1,25 @@
 ---
 description: >-
-  Token Rodeo is an open source, static site generator built on a modern
-  technology stack that makes it easy to host your own gallery of NFT assets.
+  Rodeo (https://token.rodeo) is an open source, static site generator built on
+  a modern technology stack that makes it easy to host your own gallery of NFT
+  assets.
 ---
 
 # Introduction
 
 ## Background
 
-We started Token Rodeo because let's face it—NFTs are pretty fun, but it would be even better if we could display our collections on the internet in a manner and location of our choosing! So we set out to build something that generates a static website that can be easily deployed anywhere, with a beautiful and responsive gallery to showcase your pieces.
+We started Rodeo because let's face it—NFTs are pretty fun, but it would be even better if we could display our collections on the internet in a manner and location of our choosing! So we set out to build something that generates a static website that can be easily deployed anywhere, with a beautiful and responsive gallery to showcase your pieces.
 
 We've set it up as an open source project because we believe in the guiding principles of decentralization and want to encourage as many as possible to contribute, as well as deploy their own galleries!
 
 ## Features
 
-After launching it for the first time and authenticating with your wallet, Token Rodeo fetches all of the pictures and various metadata for the collection of NFTs stored in it.
+After launching it for the first time and authenticating with your wallet, Rodeo fetches all of the pictures and various metadata for the collection of NFTs stored in it.
 
 ### Quick setup
 
-Token Rodeo uses WalletConnect to quickly fetch data for all of the assets stored in the authenticated wallet. **Note: we only link to those assets and do not in any way interact with them such that they could become lost, traded, stolen, etc.**
+Rodeo uses WalletConnect to quickly fetch data for all of the assets stored in the authenticated wallet. **Note: we only link to those assets and do not in any way interact with them such that they could become lost, traded, stolen, etc.**
 
 ### Pick & choose what you want to display
 
@@ -30,5 +31,5 @@ After picking which assets you want to display in your gallery, you can choose a
 
 ### Lightning fast static site
 
-With assets and a theme selected, Token Rodeo will generate your custom static site which can be quickly deployed on a hosting service of your choosing \(our pick for this is [Netlify](https://netlify.com)\). It's all compiled with the Eleventy static site generator and is designed for a super clean and fast experience for your viewers.
+With assets and a theme selected, Rodeo will generate your custom static site which can be quickly deployed on a hosting service of your choosing \(our pick for this is [Netlify](https://netlify.com)\). It's all compiled with the Eleventy static site generator and is designed for a super clean and fast experience for your viewers.
 

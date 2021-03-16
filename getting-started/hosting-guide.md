@@ -1,7 +1,7 @@
 ---
 description: >-
-  Token Rodeo generates a static website, which is set up to deploy easily in
-  all kinds of places.
+  Rodeo generates a static website, which is set up to deploy easily in all
+  kinds of places.
 ---
 
 # Hosting Guide

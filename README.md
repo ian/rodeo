@@ -1,10 +1,8 @@
 # README
 
-![NFT Gallery Logo](.gitbook/assets/logo.png)
+## Rodeo
 
-## NFT Gallery
-
-NFT Gallery is a static site generator \(SSG\) that builds a gallery of your collected and created NFTs to showcase on your website.
+Rodeo is a static site generator \(SSG\) that builds a gallery of your collected and created NFTs to showcase on your website.
 
 ## Quickstart
 
