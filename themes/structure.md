@@ -1,8 +1,48 @@
 # Structure
 
+## File structure
+
+The recommended file structure for a Rodeo theme is:
+
+```text
+# Structure
+
+.
+├── /assets
+|   └── /css
+|       ├── main.css
+|   ├── /fonts
+|   ├── /images
+|   ├── /js
+├── default.hbs
+├── index.hbs [required]
+└── token.hbs [required]
+└── package.json [required]
+```
+
+While optional, we recommend building with a /partials directory to include blocks of code that can be used across all templates, simplifying things.
+
+```text
+# Structure
+
+.
+├── /assets
+|   └── /css
+|       ├── main.css
+|   ├── /fonts
+|   ├── /images
+|   ├── /js
+├── /partials
+|   └── token-meta.hbs
+├── default.hbs
+├── index.hbs [required]
+└── token.hbs [required]
+└── package.json [required]
+```
+
 ## Templates
 
-Two template files are required: `index.hbs` and `token.hbs`. Everything else is optional.
+Two template files are **required**: `index.hbs` and `token.hbs`. Everything else is optional.
 
 We set you up with `default.hbs` as a base layout for your theme and we recommend getting started there.
 
@@ -42,6 +82,24 @@ This is an optional theme for error-code specific pages. So if you want to set u
 
 ### **robots.txt**
 
-By default, Rodeo sets you up with a `robots.txt` file, but if you'd like to customize it this is where you'd do it.  
+By default, Rodeo sets you up with a `robots.txt` file, but if you'd like to customize it this is where you'd do it.
 
+## Styling
+
+In our default theme, Folsom, we use [TailwindCSS](https://tailwindcss.com) which is a declarative CSS framework, speeding up design and reducing the complexities of layout.
+
+Some classes are generated automatically and can be leveraged in those contexts to apply a different styling. Automatic classes include:
+
+* `featured` — a featured token
+* `media-image` — an image token
+* `media-video` — a video token
+* `media-audio` — an audio token
+* `created` — a token that was created by an authenticated wallet
+* `collected` — a token that is owned by, but wasn't created by the authenticated wallet
+
+## Package.json
+
+A `package.json` file is required for each theme, and defines relevant information to power the theme itself.
+
+\[SAMPLE TO COME\]
 
