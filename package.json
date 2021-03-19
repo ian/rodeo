@@ -1,0 +1,34 @@
+{
+  "name": "rodeo",
+  "version": "independent",
+  "npmClient": "yarn",
+  "description": "Token Rodeo is a static site generator (SSG) that builds a gallery of your collected and created NFTs to showcase on your website.",
+  "main": "index.js",
+  "workspaces": [
+    "packages/*"
+  ],
+  "dependencies": {
+    "lerna": "^4.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "build": "lerna run build",
+    "test": "lerna run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tokenrodeo/Rodeo.git"
+  },
+  "keywords": [
+    "NFT",
+    "token",
+    "ETH",
+    "tokenrodeo"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tokenrodeo/Rodeo/issues"
+  },
+  "homepage": "https://github.com/tokenrodeo/Rodeo#readme"
+}
