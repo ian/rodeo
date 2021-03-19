@@ -1,6 +1,12 @@
+// --------------------------------------------------------------------
+// Usage: node fetch.js 0xbcba11ef0dc585f028d8f4442e82ee6ceecbcbba
+// Validates eth address, fetches and tidies up assets from OpenSea API
+// --------------------------------------------------------------------
+
 const axios = require('axios');
 const fs = require('fs');
 
+// Validate eth address or throw error
 const isEthAddress = (address) => {
     if ((/^(0x){1}[0-9a-fA-F]{40}$/i.test(address)) == false) {
         throw 'Enter a valid wallet address.'
@@ -9,6 +15,7 @@ const isEthAddress = (address) => {
     }
 }
 
+// Modify the tokens coming from OpenSea
 const formatTokens = (tokenArray) => {
     var formattedTokens = []
     tokenArray.forEach(ufT => {
@@ -52,6 +59,7 @@ const formatTokens = (tokenArray) => {
     return formattedTokens
 }
 
+// Write JSON to file
 const storeData = (data, path) => {
   try {
     fs.writeFileSync(path, JSON.stringify(data, null, 4))
@@ -63,6 +71,7 @@ const storeData = (data, path) => {
 let owner = isEthAddress(process.argv[2])
 let uri = 'https://api.opensea.io/api/v1/assets?&order_direction=desc&offset=0&limit=100&owner=' + owner
 
+// OpenSea API.
 axios.get(uri)
   .then(response => {
     let tokenArray = response.data.assets
