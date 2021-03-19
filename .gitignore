@@ -1,2 +1,9 @@
 .env*
 .DS_Store
+node_modules
+dist/
+coverage/
+.vscode
+.DS_Store
+*.old
+*.log
