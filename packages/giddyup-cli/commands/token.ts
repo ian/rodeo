@@ -120,6 +120,13 @@ const syncData = () => {
     })
 }
 
+<<<<<<< HEAD
 let output = "./rodeo.json"
+=======
+let owner = isEthAddress(process.argv[2])
+let force_overwrite = process.argv[3] == '-f'
+let uri = 'https://api.opensea.io/api/v1/assets?&order_direction=desc&offset=0&limit=100&owner=' + owner
+let output = './rodeo.json'
+>>>>>>> 371532db1f05d3a16637873cbb3e4e04798d0446
 
 export default syncData
