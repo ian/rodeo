@@ -1,6 +1,6 @@
 {
   "name": "giddyup",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "description": "See https://github.com/tokenrodeo/Rodeo for full documentation.",
   "main": "index.js",
   "scripts": {

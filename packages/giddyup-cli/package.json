@@ -1,6 +1,6 @@
 {
   "name": "@giddyup/cli",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "description": "See https://github.com/tokenrodeo/Rodeo for full documentation.",
   "bin": {
     "rel": "./dist/bin/rel.js"
