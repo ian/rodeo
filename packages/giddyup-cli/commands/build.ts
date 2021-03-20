@@ -6,7 +6,14 @@ export default () => {
 
   spawn(
     `${__dirname}/../../node_modules/.bin/eleventy`,
-    ["--input", "./site"],
+    [
+      "--input",
+      "./site",
+      "--output",
+      "./dist",
+      "--config",
+      `${__dirname}/../eleventy.js`,
+    ],
     {
       stdio: "inherit",
     }

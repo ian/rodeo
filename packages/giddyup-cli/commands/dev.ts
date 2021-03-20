@@ -1,33 +1,64 @@
 import chokidar from "chokidar"
 import debounce from "debounce"
 import ora from "ora"
-import { spawn } from "child_process"
+// import { spawn } from "child_process"
+import spawn from "cross-spawn"
 
-let server
-
-const handleDirChange = debounce(() => {
+const handleDirChange = debounce(async () => {
   console.clear()
   const compiling = ora("Compiling").start()
 
-  if (server) {
-    server.kill("SIGINT")
+  const invocations = [
+    // [
+    //   `${__dirname}/../../node_modules/.bin/postcss`,
+    //   "styles/main.css",
+    //   "-d",
+    //   "dist/css/",
+    //   "--config",
+    //   `${__dirname}/../postcss.config.js`,
+    // ],
+    [
+      `${__dirname}/../../node_modules/.bin/eleventy`,
+      // "--input",
+      // "./site",
+      "--config",
+      `${__dirname}/../eleventy.js`,
+    ],
+  ]
+  for (const [program, ...args] of invocations) {
+    const res = await spawnAsync(program, args, {
+      stdio: "inherit",
+    }).catch((err) => {
+      console.error(err)
+    })
   }
 
-  // spawn("tsc", ["--project", "tsconfig.json"], {
-  //   stdio: ["inherit", "inherit", "inherit"],
-  // }).on("close", async (code) => {
-  //   if (code === 0) {
-  compiling.succeed()
+  compiling.succeed("Compiled")
+  console.log()
 
-  server = spawn("node", [`${__dirname}/../dist/lib/devServer.js`], {
+  spawn(`${__dirname}/../../node_modules/.bin/eleventy`, ["--serve"], {
     stdio: "inherit",
   })
-  //   } else {
-  //     compiling.fail("Error: Compilation failed. Watching for changes")
-  //   }
-  // })
 }, 300)
 
 export default () => {
   chokidar.watch("./*", { persistent: true }).on("all", handleDirChange)
+}
+
+async function spawnAsync(program, args, options) {
+  options = (Array.isArray(args) ? options : args) || {}
+  args = Array.isArray(args) ? args : []
+  const code = await new Promise((resolve, reject) => {
+    console.log("Spawning", program, args.join(" "))
+    const cp = spawn(program, args, options)
+    cp.on("error", (ex) => reject(ex))
+    cp.on("close", (code) => resolve(code))
+  })
+  if (code !== 0) {
+    throw new Error(
+      `${program}${
+        args.length ? ` ${JSON.stringify(args)}` : ""
+      } exited with non-zero code ${code}.`
+    )
+  }
 }

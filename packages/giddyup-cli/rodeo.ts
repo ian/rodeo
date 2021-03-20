@@ -1,13 +1,12 @@
 #!/usr/bin/env node
 
 import { Command } from "commander"
-import pkg from "../package.json"
-import BuildCommand from "../commands/build"
-import StartCommand from "../commands/start"
-import DevCommand from "../commands/dev"
+import pkg from "./package.json"
+import BuildCommand from "./commands/build"
+import StartCommand from "./commands/start"
+import DevCommand from "./commands/dev"
 
 // "clean": "rm -rf _site",
-// "build": "eleventy",
 // "start": "eleventy --serve",
 // "dev": "npm-run-all clean --parallel dev:*",
 // "dev:postcss": "postcss styles/main.css -d dist/css/ --config ./postcss.config.js -w",
@@ -36,7 +35,6 @@ program
   .command("dev")
   .description("Start the development server")
   .action((source, destination) => {
-    console.log("dev")
     DevCommand()
   })
 
