@@ -2,14 +2,21 @@
   "name": "giddyup",
   "version": "0.0.2",
   "description": "See https://github.com/tokenrodeo/Rodeo for full documentation.",
-  "main": "index.js",
+  "bin": {
+    "rel": "./dist/bin/rel.js"
+  },
   "publishConfig": {
     "access": "public"
   },
+  "main": "dist/bin/rodeo.js",
+  "types": "dist/bin/rodeo.d.ts",
+  "files": [
+    "dist/**/*"
+  ],
   "scripts": {
-    "build": "tsc && chmod +x ./dist/bin/cli.js",
+    "build": "tsc && chmod +x ./dist/bin/rodeo.js",
     "build:watch": "tsc --watch",
-    "dev": "ts-node ./lib/devServer.ts"
+    "cli": "ts-node ./bin/rodeo.ts"
   },
   "repository": {
     "type": "git",
@@ -24,5 +31,10 @@
   "dependencies": {
     "commander": "^7.1.0"
   },
-  "gitHead": "12fe92cf38ee128220482b7d545a4c443e99ee51"
+  "gitHead": "12fe92cf38ee128220482b7d545a4c443e99ee51",
+  "devDependencies": {
+    "@types/node": "^14.14.35",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.3"
+  }
 }
