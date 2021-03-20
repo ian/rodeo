@@ -3,5 +3,5 @@
   "compilerOptions": {
     "outDir": "./dist"
   },
-  "include": ["bin", "commands", "lib", "rodeo.ts", "postcss.config.ts", "eleventy.ts"]
+  "include": ["commands", "lib", "bin", "postcss.config.ts", "eleventy.ts"]
 }

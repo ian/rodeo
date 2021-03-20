@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
 import { Command } from "commander"
-import pkg from "./package.json"
-import BuildCommand from "./commands/build"
-import StartCommand from "./commands/start"
-import DevCommand from "./commands/dev"
+import pkg from "../package.json"
+import BuildCommand from "../commands/build"
+import StartCommand from "../commands/start"
+import DevCommand from "../commands/dev"
 
 // "clean": "rm -rf _site",
 // "start": "eleventy --serve",
