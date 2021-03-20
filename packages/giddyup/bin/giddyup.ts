@@ -62,7 +62,11 @@ import inquirer from "inquirer"
       }`
       )
 
-      initializing.succeed("DONE")
+      initializing.succeed("Initialized")
+
+      console.log()
+      console.log("Installing Dependencies")
+      console.log()
 
       process.chdir(`./${projectName}`)
 
