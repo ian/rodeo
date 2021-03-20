@@ -17,13 +17,7 @@ const handleDirChange = debounce(async () => {
     //   "--config",
     //   `${__dirname}/../postcss.config.js`,
     // ],
-    [
-      `${__dirname}/../../node_modules/.bin/eleventy`,
-      // "--input",
-      // "./site",
-      "--config",
-      `${__dirname}/../eleventy.js`,
-    ],
+    [`${__dirname}/../../node_modules/.bin/eleventy`, "--config", `rodeo.js`],
   ]
   for (const [program, ...args] of invocations) {
     const res = await spawnAsync(program, args, {
@@ -36,9 +30,9 @@ const handleDirChange = debounce(async () => {
   compiling.succeed("Compiled")
   console.log()
 
-  spawn(`${__dirname}/../../node_modules/.bin/eleventy`, ["--serve"], {
-    stdio: "inherit",
-  })
+  // spawn(`${__dirname}/../../node_modules/.bin/eleventy`, ["--serve"], {
+  //   stdio: "inherit",
+  // })
 }, 300)
 
 export default () => {
