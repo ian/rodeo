@@ -1,0 +1,22 @@
+{
+  "name": "rodeo",
+  "version": "1.0.0",
+  "description": "## Token Rodeo",
+  "main": "fetch.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tokenrodeo/Rodeo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tokenrodeo/Rodeo/issues"
+  },
+  "homepage": "https://github.com/tokenrodeo/Rodeo#readme",
+  "dependencies": {
+    "axios": "^0.21.1"
+  }
+}

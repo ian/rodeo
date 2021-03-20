@@ -1,2 +1,5 @@
 .env*
 .DS_Store
+package-lock.json
+rodeo.json
+node_modules
