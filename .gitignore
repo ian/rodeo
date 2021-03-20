@@ -7,3 +7,5 @@ coverage/
 .DS_Store
 *.old
 *.log
+package-lock.json
+rodeo.json

@@ -9,6 +9,7 @@
     "packages/*"
   ],
   "dependencies": {
+    "axios": "^0.21.1",
     "lerna": "^4.0.0"
   },
   "scripts": {
