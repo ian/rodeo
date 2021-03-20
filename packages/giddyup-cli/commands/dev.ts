@@ -64,14 +64,15 @@ const handleDirChange = debounce(async () => {
 }, 300)
 
 export default () => {
-  chokidar.watch("./*", { persistent: true }).on("all", handleDirChange)
+  const dir = process.cwd()
+  // console.log("Watching", dir)
+  chokidar.watch(`${dir}/site`, { persistent: true }).on("all", handleDirChange)
 }
 
 async function spawnAsync(program, args, options) {
   options = (Array.isArray(args) ? options : args) || {}
   args = Array.isArray(args) ? args : []
   const code = await new Promise((resolve, reject) => {
-    // console.log("Spawning", program, args.join(" "))
     const cp = spawn(program, args, options)
     cp.on("error", (ex) => reject(ex))
     cp.on("close", (code) => resolve(code))
