@@ -7,7 +7,9 @@
     "access": "public"
   },
   "scripts": {
-    "test": "yarn test"
+    "build": "tsc && chmod +x ./dist/bin/cli.js",
+    "build:watch": "tsc --watch",
+    "dev": "ts-node ./lib/devServer.ts"
   },
   "repository": {
     "type": "git",

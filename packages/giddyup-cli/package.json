@@ -16,7 +16,6 @@
   "scripts": {
     "build": "tsc && chmod +x ./dist/bin/cli.js",
     "build:watch": "tsc --watch",
-    "test": "yarn test",
     "dev": "ts-node ./lib/devServer.ts"
   },
   "repository": {
