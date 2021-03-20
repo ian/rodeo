@@ -1,0 +1,96 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## [0.0.12](https://github.com/tokenrodeo/Rodeo/compare/giddyup@0.0.11...giddyup@0.0.12) (2021-03-20)
+
+**Note:** Version bump only for package giddyup
+
+
+
+
+
+## [0.0.11](https://github.com/tokenrodeo/Rodeo/compare/giddyup@0.0.10...giddyup@0.0.11) (2021-03-20)
+
+**Note:** Version bump only for package giddyup
+
+
+
+
+
+## [0.0.10](https://github.com/tokenrodeo/Rodeo/compare/giddyup@0.0.9...giddyup@0.0.10) (2021-03-20)
+
+**Note:** Version bump only for package giddyup
+
+
+
+
+
+## [0.0.9](https://github.com/tokenrodeo/Rodeo/compare/giddyup@0.0.8...giddyup@0.0.9) (2021-03-20)
+
+**Note:** Version bump only for package giddyup
+
+
+
+
+
+## [0.0.8](https://github.com/tokenrodeo/Rodeo/compare/giddyup@0.0.7...giddyup@0.0.8) (2021-03-20)
+
+**Note:** Version bump only for package giddyup
+
+
+
+
+
+## [0.0.7](https://github.com/tokenrodeo/Rodeo/compare/giddyup@0.0.6...giddyup@0.0.7) (2021-03-20)
+
+**Note:** Version bump only for package giddyup
+
+
+
+
+
+## [0.0.6](https://github.com/tokenrodeo/Rodeo/compare/giddyup@0.0.5...giddyup@0.0.6) (2021-03-20)
+
+**Note:** Version bump only for package giddyup
+
+
+
+
+
+## [0.0.5](https://github.com/tokenrodeo/Rodeo/compare/giddyup@0.0.4...giddyup@0.0.5) (2021-03-20)
+
+**Note:** Version bump only for package giddyup
+
+
+
+
+
+## [0.0.4](https://github.com/tokenrodeo/Rodeo/compare/giddyup@0.0.3...giddyup@0.0.4) (2021-03-20)
+
+**Note:** Version bump only for package giddyup
+
+
+
+
+
+## [0.0.3](https://github.com/tokenrodeo/Rodeo/compare/giddyup@0.0.2...giddyup@0.0.3) (2021-03-20)
+
+**Note:** Version bump only for package giddyup
+
+
+
+
+
+## [0.0.2](https://github.com/tokenrodeo/Rodeo/compare/giddyup@0.0.1...giddyup@0.0.2) (2021-03-20)
+
+**Note:** Version bump only for package giddyup
+
+
+
+
+
+## 0.0.1 (2021-03-20)
+
+**Note:** Version bump only for package giddyup

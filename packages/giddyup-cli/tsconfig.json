@@ -1,0 +1,7 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./dist"
+  },
+  "include": ["commands", "lib", "bin", "postcss.config.ts", "eleventy.ts"]
+}
