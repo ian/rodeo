@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/tokenrodeo/Rodeo/issues"
   },
-  "homepage": "https://github.com/tokenrodeo/Rodeo#readme"
+  "homepage": "https://github.com/tokenrodeo/Rodeo#readme",
+  "dependencies": {
+    "commander": "^7.1.0"
+  }
 }
