@@ -18,8 +18,13 @@ import inquirer from "inquirer"
       {
         type: "input",
         name: "projectName",
-        message: "What's the name of your project",
+        message: "What's the name of your project?",
       },
+      {
+        type: "input",
+        name: "walletAddress",
+        message: "Enter a wallet address.",
+      }
     ])
     .then(async (answers) => {
       const dir = process.cwd()
@@ -47,11 +52,13 @@ import inquirer from "inquirer"
         `
       {
         "name": "${projectName}",
+        "wallet": "${walletAddress}",
         "version": "0.0.1",
         "description": "",
         "scripts": {
           "build": "rodeo build",
-          "dev": "rodeo dev"
+          "dev": "rodeo dev",
+          "tokens": "rodeo tokens ${walletAddress}"
         },
         "keywords": [],
         "author": "",
