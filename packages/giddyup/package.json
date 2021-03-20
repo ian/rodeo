@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "See https://github.com/tokenrodeo/Rodeo for full documentation.",
   "main": "index.js",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "test": "yarn test"
   },
@@ -18,5 +21,6 @@
   "homepage": "https://github.com/tokenrodeo/Rodeo#readme",
   "dependencies": {
     "commander": "^7.1.0"
-  }
+  },
+  "gitHead": "12fe92cf38ee128220482b7d545a4c443e99ee51"
 }
