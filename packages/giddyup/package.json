@@ -3,7 +3,7 @@
   "version": "0.0.4",
   "description": "See https://github.com/tokenrodeo/Rodeo for full documentation.",
   "bin": {
-    "rel": "./dist/bin/rel.js"
+    "giddyup": "./dist/bin/rodeo.js"
   },
   "publishConfig": {
     "access": "public"
