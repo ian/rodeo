@@ -26,15 +26,15 @@ import inquirer from "inquirer"
       const initializing = ora(`Initializing Project ${projectName}`).start()
 
       await fs
-        .copy(`${__dirname}/../template/rodeo.js`, `${projectDir}/rodeo.js`)
+        .copy(`${__dirname}/template/rodeo.js`, `${projectDir}/rodeo.js`)
         .catch(console.log)
 
       await fs
-        .copy(`${__dirname}/../template/styles`, `${projectDir}/styles`)
+        .copy(`${__dirname}/template/styles`, `${projectDir}/styles`)
         .catch(console.log)
 
       await fs
-        .copy(`${__dirname}/../template/site`, `${projectDir}/site`)
+        .copy(`${__dirname}/template/site`, `${projectDir}/site`)
         .catch(console.log)
 
       await fsUtils.writeFileSync(
