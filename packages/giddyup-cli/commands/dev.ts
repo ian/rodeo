@@ -66,7 +66,9 @@ const handleDirChange = debounce(async () => {
 export default () => {
   const dir = process.cwd()
   // console.log("Watching", dir)
-  chokidar.watch(`${dir}/site`, { persistent: true }).on("all", handleDirChange)
+  chokidar
+    .watch(`${dir}/site/**/*`, { persistent: true })
+    .on("all", handleDirChange)
 }
 
 async function spawnAsync(program, args, options) {

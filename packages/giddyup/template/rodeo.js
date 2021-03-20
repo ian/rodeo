@@ -1,5 +1,8 @@
-module.exports = function () {
+module.exports = function (config) {
+  config.addPassthroughCopy({ "site/img/*": "img" });
+  
   return {
+    ...config,
     dir: {
       input: "site",
       data: "data",
