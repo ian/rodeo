@@ -2,9 +2,19 @@
   "name": "@giddyup/cli",
   "version": "0.0.1",
   "description": "See https://github.com/tokenrodeo/Rodeo for full documentation.",
-  "main": "index.js",
+  "bin": {
+    "rel": "./dist/bin/rel.js"
+  },
+  "main": "dist/bin/cli.js",
+  "types": "dist/bin/cli.d.ts",
+  "files": [
+    "dist/**/*"
+  ],
   "scripts": {
-    "test": "yarn test"
+    "build": "tsc && chmod +x ./dist/bin/cli.js",
+    "build:watch": "tsc --watch",
+    "test": "yarn test",
+    "dev": "ts-node ./lib/devServer.ts"
   },
   "repository": {
     "type": "git",
@@ -15,5 +25,17 @@
   "bugs": {
     "url": "https://github.com/tokenrodeo/Rodeo/issues"
   },
-  "homepage": "https://github.com/tokenrodeo/Rodeo#readme"
+  "homepage": "https://github.com/tokenrodeo/Rodeo#readme",
+  "dependencies": {
+    "child_process": "^1.0.2",
+    "chokidar": "^3.5.1",
+    "commander": "^7.1.0",
+    "debounce": "^1.2.1",
+    "ora": "^5.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.35",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.3"
+  }
 }
