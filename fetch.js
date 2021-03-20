@@ -92,10 +92,9 @@ const syncData = () => {
                 return storeData(formattedTokens, output)
             } else {
                 let syncedArray = []
-                formattedTokens.splice(4,12)
                 savedTokens.forEach(savedTokenData => {
                     let matchIndex = formattedTokens.findIndex(newTokenData => newTokenData.token_id == savedTokenData.token_id)
-                    if (matchIndex > -1){
+                    if (matchIndex != -1){
                         let newlyPulledData = formattedTokens[matchIndex]
                         let synced = Object.assign(newlyPulledData, savedTokenData)
                         syncedArray.push(synced)
