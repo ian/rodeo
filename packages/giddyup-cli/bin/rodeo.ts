@@ -6,6 +6,13 @@ import BuildCommand from "../commands/build"
 import StartCommand from "../commands/start"
 import DevCommand from "../commands/dev"
 
+// "clean": "rm -rf _site",
+// "build": "eleventy",
+// "start": "eleventy --serve",
+// "dev": "npm-run-all clean --parallel dev:*",
+// "dev:postcss": "postcss styles/main.css -d dist/css/ --config ./postcss.config.js -w",
+// "dev:eleventy": "eleventy --watch --serve"
+
 const program = new Command()
 program.version(pkg.version)
 
@@ -29,6 +36,7 @@ program
   .command("dev")
   .description("Start the development server")
   .action((source, destination) => {
+    console.log("dev")
     DevCommand()
   })
 

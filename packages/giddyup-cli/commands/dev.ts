@@ -13,21 +13,21 @@ const handleDirChange = debounce(() => {
     server.kill("SIGINT")
   }
 
-  spawn("tsc", ["--project", "tsconfig.json"], {
-    stdio: ["inherit", "inherit", "inherit"],
-  }).on("close", async (code) => {
-    if (code === 0) {
-      compiling.succeed()
+  // spawn("tsc", ["--project", "tsconfig.json"], {
+  //   stdio: ["inherit", "inherit", "inherit"],
+  // }).on("close", async (code) => {
+  //   if (code === 0) {
+  compiling.succeed()
 
-      server = spawn("node", [`${__dirname}/../lib/devServer.js`], {
-        stdio: "inherit",
-      })
-    } else {
-      compiling.fail("Error: Compilation failed. Watching for changes")
-    }
+  server = spawn("node", [`${__dirname}/../dist/lib/devServer.js`], {
+    stdio: "inherit",
   })
+  //   } else {
+  //     compiling.fail("Error: Compilation failed. Watching for changes")
+  //   }
+  // })
 }, 300)
 
 export default () => {
-  chokidar.watch("./rel", { persistent: true }).on("all", handleDirChange)
+  chokidar.watch("./*", { persistent: true }).on("all", handleDirChange)
 }
