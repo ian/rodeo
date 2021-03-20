@@ -3,11 +3,16 @@
 import fs from "fs-extra"
 import slugify from "slugify"
 import fsUtils from "fs-utils"
+import chalk from "chalk"
 import ora from "ora"
 import spawn from "cross-spawn"
 
 import inquirer from "inquirer"
 ;(async () => {
+  console.log()
+  console.log("RODEO BANNER")
+  console.log()
+
   inquirer
     .prompt([
       {
@@ -40,21 +45,21 @@ import inquirer from "inquirer"
       await fsUtils.writeFileSync(
         `${projectDir}/package.json`,
         `
-{
-  "name": "${projectName}",
-  "version": "0.0.1",
-  "description": "",
-  "scripts": {
-    "build": "rodeo build",
-    "dev": "rodeo dev"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "",
-  "devDependencies": {
-    "@giddyup/cli": "^0.0.5"
-  }
-}`
+      {
+        "name": "${projectName}",
+        "version": "0.0.1",
+        "description": "",
+        "scripts": {
+          "build": "rodeo build",
+          "dev": "rodeo dev"
+        },
+        "keywords": [],
+        "author": "",
+        "license": "",
+        "devDependencies": {
+          "@giddyup/cli": "^0.0.5"
+        }
+      }`
       )
 
       initializing.succeed("DONE")
@@ -66,6 +71,24 @@ import inquirer from "inquirer"
       }).catch((err) => {
         console.error(err)
       })
+
+      console.log()
+      console.log(`Rodeo installed into ./${projectName}`)
+      console.log()
+      console.log("Inside that directory, you can run several commands.")
+      console.log()
+      console.log("  " + chalk.blueBright("rodeo dev"))
+      console.log("    Start the development server")
+      console.log()
+      console.log("  " + chalk.blueBright("rodeo build"))
+      console.log("    Builds the app for production")
+      console.log()
+      console.log("We suggest that you begin by typing:")
+      console.log()
+      console.log("  " + chalk.yellowBright("cd" + " " + projectName))
+      console.log("  " + chalk.yellowBright("rodeo dev"))
+      console.log()
+      console.log()
     })
     .catch((error) => {
       if (error.isTtyError) {
