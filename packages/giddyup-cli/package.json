@@ -1,6 +1,6 @@
 {
   "name": "@giddyup/cli",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "See https://github.com/tokenrodeo/Rodeo for full documentation.",
   "publishConfig": {
     "access": "public"
@@ -45,7 +45,6 @@
     "postcss-import": "^14.0.0",
     "tailwindcss": "^2.0.4"
   },
-  "peerDependencies": {},
   "devDependencies": {
     "@types/node": "^14.14.35",
     "child_process": "^1.0.2",
