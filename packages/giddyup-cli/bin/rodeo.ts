@@ -7,10 +7,6 @@ import StartCommand from "../commands/start"
 import DevCommand from "../commands/dev"
 
 // "clean": "rm -rf _site",
-// "start": "eleventy --serve",
-// "dev": "npm-run-all clean --parallel dev:*",
-// "dev:postcss": "postcss styles/main.css -d dist/css/ --config ./postcss.config.js -w",
-// "dev:eleventy": "eleventy --watch --serve"
 
 const program = new Command()
 program.version(pkg.version)
@@ -22,13 +18,6 @@ program
   .description("Builds the app for production")
   .action((source, destination) => {
     BuildCommand()
-  })
-
-program
-  .command("start")
-  .description("Runs the built app in production mode")
-  .action((source, destination) => {
-    StartCommand()
   })
 
 program

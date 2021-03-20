@@ -17,7 +17,7 @@
     "build": "tsc && yarn chmod",
     "build:watch": "tsc-watch --onSuccess \"yarn chmod\"",
     "chmod": "chmod +x ./dist/bin/rodeo.js",
-    "rodeo": "ts-node ./bin/rodeo.ts"
+    "cli": "ts-node ./bin/rodeo.ts"
   },
   "repository": {
     "type": "git",
@@ -34,6 +34,7 @@
     "autoprefixer": "^10.2.5",
     "chokidar": "^3.5.1",
     "commander": "^7.1.0",
+    "cp-file": "^9.0.0",
     "cross-spawn": "^7.0.3",
     "debounce": "^1.2.1",
     "fastify": "^3.14.0",
