@@ -33,8 +33,11 @@
   "homepage": "https://github.com/tokenrodeo/Rodeo#readme",
   "dependencies": {
     "commander": "^7.1.0",
+    "cross-spawn": "^7.0.3",
+    "fs-extra": "^9.1.0",
     "fs-utils": "^0.7.0",
-    "inquirer": "^8.0.0"
+    "inquirer": "^8.0.0",
+    "slugify": "^1.4.7"
   },
   "gitHead": "12fe92cf38ee128220482b7d545a4c443e99ee51",
   "devDependencies": {

@@ -1,0 +1,20 @@
+@tailwind base;
+
+h1 {
+  @apply text-3xl;
+}
+h2 {
+  @apply text-2xl;
+}
+h3 {
+  @apply text-lg;
+}
+a {
+  @apply text-blue-600 underline;
+}
+
+/* purgecss end ignore */
+
+@tailwind components;
+
+@tailwind utilities;

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Eleventy Example</title>
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+
+<body>
+  {{!-- {{> hero }} --}}
+
+  <div class="w-1/2 m-auto mt-10">
+    <h2 class="mb-5">Here is an example of using global data to populate a list. Check out ./data to see where this
+      lives.</h2>
+    {{#each tokens}}
+    <h2>
+      <a href="{{this.url}}" target="_blank" rel="nofollow">{{title}}</a>
+    </h2>
+    <div>{{description}}</div>
+    {{/each}}
+  </div>
+</body>
+
+</html>
