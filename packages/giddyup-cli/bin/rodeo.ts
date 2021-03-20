@@ -3,8 +3,8 @@
 import { Command } from "commander"
 import pkg from "../package.json"
 import BuildCommand from "../commands/build"
-import StartCommand from "../commands/start"
 import DevCommand from "../commands/dev"
+import TokenCommand from "../commands/token"
 
 // "clean": "rm -rf _site",
 
@@ -25,6 +25,14 @@ program
   .description("Start the development server")
   .action((source, destination) => {
     DevCommand()
+  })
+
+
+program
+  .command("tokens")
+  .description("Grab tokens from OpenSea API")
+  .action((source, destination) => {
+    TokenCommand()
   })
 
 program.parse(process.argv)
