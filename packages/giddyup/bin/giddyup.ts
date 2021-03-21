@@ -138,7 +138,8 @@ module.exports = function (config) {
   "scripts": {
     "build": "rodeo build",
     "dev": "rodeo dev",
-    "tokens": "rodeo tokens"
+    "tokens": "rodeo tokens",
+    "ipfs": "rodeo ipfs"
   },
   "keywords": [],
   "author": "",

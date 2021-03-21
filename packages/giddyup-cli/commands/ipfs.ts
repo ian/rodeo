@@ -16,7 +16,6 @@ export default async () => {
     env = parse(await fs.readFileSync(".env", "utf8"))
   } catch (err) {
     // if the file doesn't exist, will be created.
-    console.error("ERROR", err)
   }
 
   if (!env.PINATA_API_KEY || !env.PINATA_SECRET_KEY) {
