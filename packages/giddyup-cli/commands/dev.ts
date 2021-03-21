@@ -4,16 +4,6 @@ import spawn from "cross-spawn"
 import server from "live-server"
 
 async function startServer() {
-  // return spawnAsync(
-  //   `${__dirname}/../../node_modules/.bin/http-server`,
-  //   ["./dist"],
-  //   {
-  //     stdio: "inherit",
-  //   }
-  // ).catch((err) => {
-  //   console.error(err)
-  // })
-
   var params = {
     port: 8080, // Set the server port. Defaults to 8080.
     root: "./dist", // Set root directory that's being served. Defaults to cwd.
