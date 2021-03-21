@@ -18,8 +18,13 @@ const isEthAddress = (address) => {
 }
 
 ;(async () => {
+  const pkg = require("../package.json")
+
   console.log()
   console.log(`
+  Rodeo installer v${pkg.version}
+
+  
                                            
                              .',,,;;;;'      ,clllllll;.    .;:c:,.      
   ...'',;,.      'okOOko'    ,OWWWWWWWNO;    :XMMWXXXNO'  .dXWXKNWKo.    
@@ -35,7 +40,7 @@ const isEthAddress = (address) => {
  cNMNc 'OMMNo.  .:odoc,.                                                 
  lWMWx..oOkdc.                                                           
 .okdl;.                                                                  
-                                                                                                     
+
 `)
   console.log()
 
