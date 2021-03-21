@@ -49,7 +49,7 @@ const isEthAddress = (address) => {
       {
         type: "input",
         name: "walletAddress",
-        message: "Enter a wallet address.",
+        message: "Enter a wallet address:",
       },
     ])
     .then(async (answers) => {
@@ -63,10 +63,6 @@ const isEthAddress = (address) => {
       const projectDir = `${dir}/${projectName}`
 
       const initializing = ora(`Initializing Project ${projectName}`).start()
-
-      // await fs
-      //   .copy(`${__dirname}/template/rodeo.js`, `${projectDir}/rodeo.js`)
-      //   .catch(console.log)
 
       await fsUtils.writeFileSync(
         `${projectDir}/rodeo.js`,
@@ -94,6 +90,13 @@ module.exports = function (config) {
 }
 `
       )
+
+      await fs
+        .copy(
+          `${__dirname}/template/tailwind.config.js`,
+          `${projectDir}/tailwind.config.js`
+        )
+        .catch(console.log)
 
       await fs
         .copy(`${__dirname}/template/styles`, `${projectDir}/styles`)
