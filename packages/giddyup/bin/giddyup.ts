@@ -72,7 +72,6 @@ const isEthAddress = (address) => {
         `${projectDir}/rodeo.js`,
         `
 module.exports = function (config) {
-  config.wallet = "${walletAddress}"
   config.addPassthroughCopy({ "site/img/*": "img" })
 
   return {
@@ -86,6 +85,14 @@ module.exports = function (config) {
     templateFormats: ["html", "hbs", "md"],
   }
 }`
+      )
+
+      await fsUtils.writeFileSync(
+        `${projectDir}/data/wallet.json`,
+        `{
+  "address": "${walletAddress}"
+}
+`
       )
 
       await fs
@@ -127,6 +134,16 @@ module.exports = function (config) {
       process.chdir(`./${projectName}`)
 
       await spawnAsync(`yarn`, ["install"], {
+        stdio: "inherit",
+      }).catch((err) => {
+        console.error(err)
+      })
+
+      console.log()
+      console.log("Loading Token Data")
+      console.log()
+
+      await spawnAsync(`yarn`, ["tokens"], {
         stdio: "inherit",
       }).catch((err) => {
         console.error(err)

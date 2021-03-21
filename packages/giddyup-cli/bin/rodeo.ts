@@ -4,7 +4,7 @@ import { Command } from "commander"
 import pkg from "../package.json"
 import BuildCommand from "../commands/build"
 import DevCommand from "../commands/dev"
-import TokenCommand from "../commands/token"
+import TokenCommand from "../commands/tokens"
 
 // "clean": "rm -rf _site",
 
@@ -26,7 +26,6 @@ program
   .action((source, destination) => {
     DevCommand()
   })
-
 
 program
   .command("tokens")
