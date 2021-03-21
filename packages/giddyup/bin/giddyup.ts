@@ -89,9 +89,10 @@ module.exports = function (config) {
       )
 
       await fsUtils.writeFileSync(
-        `${projectDir}/data/wallet.json`,
+        `${projectDir}/data/meta.json`,
         `{
-  "address": "${walletAddress}"
+  "wallet": "${walletAddress}",
+  "projectName": "${projectName}"
 }
 `
       )

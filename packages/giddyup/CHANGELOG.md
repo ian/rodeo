@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.19](https://github.com/tokenrodeo/Rodeo/compare/giddyup@0.0.18...giddyup@0.0.19) (2021-03-21)
+
+**Note:** Version bump only for package giddyup
+
+
+
+
+
 ## [0.0.18](https://github.com/tokenrodeo/Rodeo/compare/giddyup@0.0.17...giddyup@0.0.18) (2021-03-21)
 
 **Note:** Version bump only for package giddyup
