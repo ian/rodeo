@@ -90,6 +90,7 @@ export default () => {
     .on("change", handleStyleChange)
 }
 
+// @todo - dry this up
 async function spawnAsync(program, args, options) {
   options = (Array.isArray(args) ? options : args) || {}
   args = Array.isArray(args) ? args : []

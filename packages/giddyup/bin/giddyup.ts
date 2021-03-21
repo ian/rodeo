@@ -109,6 +109,10 @@ module.exports = function (config) {
         .catch(console.log)
 
       await fs
+        .copy(`${__dirname}/template/.env`, `${projectDir}/.env`)
+        .catch(console.log)
+
+      await fs
         .copy(
           `${__dirname}/template/netlify.toml`,
           `${projectDir}/netlify.toml`
@@ -185,7 +189,10 @@ module.exports = function (config) {
       console.log("    Builds the app for production")
       console.log()
       console.log("  " + chalk.blueBright("yarn tokens"))
-      console.log("    Update tokens for wallet address")
+      console.log("    Update tokens for wallet address using Opensea API")
+      console.log()
+      console.log("  " + chalk.blueBright("yarn ipfs"))
+      console.log("    Deploy your site to IPFS using Pinata")
       console.log()
       console.log("We suggest that you begin by typing:")
       console.log()
