@@ -1,0 +1,31 @@
+---
+pagination:
+  data: tokens
+  size: 1
+  alias: token
+permalink: "tokens/{{ token.id }}/"
+tags:
+- token
+---
+
+<p>ID: {{token.id}}</p>
+<p>Hidden: {{token.hidden}}</p>
+<p>Private: {{token.private}}</p>
+<p>Featured: {{token.featured}}</p>
+<p>Name: {{token.name}}</p>
+<p>Token ID: {{token.token_id}}</p>
+<p>Description: {{token.description}}</p>
+<p>Collection: {{token.collection}}</p>
+<p>Created By: {{token.created_by}}</p>
+<p>Owned By: {{token.owned_by}}</p>
+<p>Created By Owner: {{token.created_by_owner}}</p>
+<p>Meta Title: {{token.meta_title}}</p>
+<p>Meta Description: {{token.meta_description}}</p>
+<p>Contract Address: {{token.contract.contract_address}}</p>
+<p>Contract Name: {{token.contract.contract_name}}</p>
+<p>Contract Symbol: {{token.contract.contract_symbol}}</p>
+<p>Contract Description: {{token.contract.contract_description}}</p>
+<p>Contract External URL: {{token.contract.contract_external_url}}</p>
+<p>Media Image URL: {{token.media.image_url}}</p>
+<p>Media Video URL: {{token.media.video_url}}</p>
+<p>Media Audio URL: {{token.media.audio_url}}</p>
