@@ -86,8 +86,8 @@ const storeData = (data, path) => {
 const syncData = () => {
   const cwd = process.cwd()
   const pkg = require(`${cwd}/package.json`)
-  console.log({ pkg })
   const { wallet } = pkg
+
   let savedTokens = readData(output) || []
   let owner = isEthAddress(wallet)
   let force_overwrite = true
@@ -100,8 +100,9 @@ const syncData = () => {
     .then((response) => {
       let tokenArray = response.data.assets
       let formattedTokens = formatTokens(tokenArray, owner)
+
       if (force_overwrite) {
-        return storeData(formattedTokens, output)
+        storeData(formattedTokens, output)
       } else {
         let syncedArray = []
         savedTokens.forEach((savedTokenData) => {
@@ -118,6 +119,8 @@ const syncData = () => {
         formattedTokens.forEach((x) => syncedArray.push(x))
         storeData(syncedArray, output)
       }
+
+      console.log(`Rodeo loaded ${formattedTokens.length} tokens.`)
     })
     .catch((error) => {
       console.log(error)
