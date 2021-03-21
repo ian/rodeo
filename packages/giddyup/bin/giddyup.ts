@@ -119,9 +119,7 @@ module.exports = function (config) {
   "keywords": [],
   "author": "",
   "license": "",
-  "devDependencies": {
-    "@giddyup/cli": "^0.0.5"
-  }
+  "devDependencies": {}
 }`
       )
 
@@ -134,6 +132,12 @@ module.exports = function (config) {
       process.chdir(`./${projectName}`)
 
       await spawnAsync(`yarn`, ["install"], {
+        stdio: "inherit",
+      }).catch((err) => {
+        console.error(err)
+      })
+
+      await spawnAsync(`yarn`, ["add", "-D", "@giddyup/cli"], {
         stdio: "inherit",
       }).catch((err) => {
         console.error(err)
