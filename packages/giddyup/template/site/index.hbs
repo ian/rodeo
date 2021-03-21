@@ -2,13 +2,13 @@
 <html>
 
 <head>
-  <title>Eleventy Example</title>
+  <title>{{meta.projectName}}</title>
   <link rel="stylesheet" href="/css/main.css">
 </head>
 
-<body>
+<body class="py-8 px-6">
   {{> header}}
-  <div class="m-auto max-w-8xl p-6">
+  <div class="m-auto max-w-8xl">
     <div class="masonry before:box-inherit after:box-inherit">
       {{#each tokens }}
         {{> tokenCard this }}
