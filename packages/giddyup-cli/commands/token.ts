@@ -84,8 +84,12 @@ const storeData = (data, path) => {
 // it will be restored on re-running of the script.
 
 const syncData = () => {
+  const cwd = process.cwd()
+  const pkg = require(`${cwd}/package.json`)
+  console.log({ pkg })
+  const { wallet } = pkg
   let savedTokens = readData(output) || []
-  let owner = isEthAddress(process.argv[3])
+  let owner = isEthAddress(wallet)
   let force_overwrite = true
   let uri =
     "https://api.opensea.io/api/v1/assets?&order_direction=desc&offset=0&limit=100&owner=" +
@@ -120,6 +124,6 @@ const syncData = () => {
     })
 }
 
-let output = "./data/rodeo.json"
+let output = "./data/tokens.json"
 
 export default syncData

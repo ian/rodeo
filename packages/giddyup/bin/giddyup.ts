@@ -64,9 +64,29 @@ const isEthAddress = (address) => {
 
       const initializing = ora(`Initializing Project ${projectName}`).start()
 
-      await fs
-        .copy(`${__dirname}/template/rodeo.js`, `${projectDir}/rodeo.js`)
-        .catch(console.log)
+      // await fs
+      //   .copy(`${__dirname}/template/rodeo.js`, `${projectDir}/rodeo.js`)
+      //   .catch(console.log)
+
+      await fsUtils.writeFileSync(
+        `${projectDir}/rodeo.js`,
+        `
+module.exports = function (config) {
+  config.wallet = "${walletAddress}"
+  config.addPassthroughCopy({ "site/img/*": "img" })
+
+  return {
+    ...config,
+    dir: {
+      input: "site",
+      data: "../data",
+      includes: "includes",
+      output: "dist",
+    },
+    templateFormats: ["html", "hbs", "md"],
+  }
+}`
+      )
 
       await fs
         .copy(`${__dirname}/template/styles`, `${projectDir}/styles`)
@@ -79,23 +99,23 @@ const isEthAddress = (address) => {
       await fsUtils.writeFileSync(
         `${projectDir}/package.json`,
         `
-      {
-        "name": "${projectName}",
-        "wallet": "${walletAddress}",
-        "version": "0.0.1",
-        "description": "",
-        "scripts": {
-          "build": "rodeo build",
-          "dev": "rodeo dev",
-          "tokens": "rodeo tokens ${walletAddress}"
-        },
-        "keywords": [],
-        "author": "",
-        "license": "",
-        "devDependencies": {
-          "@giddyup/cli": "^0.0.5"
-        }
-      }`
+{
+  "name": "${projectName}",
+  "wallet": "${walletAddress}",
+  "version": "0.0.1",
+  "description": "",
+  "scripts": {
+    "build": "rodeo build",
+    "dev": "rodeo dev",
+    "tokens": "rodeo tokens"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "",
+  "devDependencies": {
+    "@giddyup/cli": "^0.0.5"
+  }
+}`
       )
 
       initializing.succeed("Initialized")
