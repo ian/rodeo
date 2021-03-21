@@ -69,6 +69,8 @@ const isEthAddress = (address) => {
 
       const initializing = ora(`Initializing Project ${projectName}`).start()
 
+      await fs.mkdirSync(projectDir)
+
       await fsUtils.writeFileSync(
         `${projectDir}/rodeo.js`,
         `
@@ -105,10 +107,6 @@ module.exports = function (config) {
         .catch(console.log)
 
       await fs
-        .copy(`${__dirname}/template/.gitignore`, `${projectDir}/.gitignore`)
-        .catch(console.log)
-
-      await fs
         .copy(`${__dirname}/template/.env`, `${projectDir}/.env`)
         .catch(console.log)
 
@@ -125,6 +123,17 @@ module.exports = function (config) {
 
       await fs
         .copy(`${__dirname}/template/site`, `${projectDir}/site`)
+        .catch(console.log)
+
+      await fsUtils
+        .writeFileSync(
+          `${projectDir}/.gitignore`,
+          `
+node_modules
+dist
+.env*
+`
+        )
         .catch(console.log)
 
       await fsUtils.writeFileSync(
