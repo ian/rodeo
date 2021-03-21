@@ -105,6 +105,17 @@ module.exports = function (config) {
         .catch(console.log)
 
       await fs
+        .copy(`${__dirname}/template/.gitignore`, `${projectDir}/.gitignore`)
+        .catch(console.log)
+
+      await fs
+        .copy(
+          `${__dirname}/template/netlify.toml`,
+          `${projectDir}/netlify.toml`
+        )
+        .catch(console.log)
+
+      await fs
         .copy(`${__dirname}/template/styles`, `${projectDir}/styles`)
         .catch(console.log)
 
