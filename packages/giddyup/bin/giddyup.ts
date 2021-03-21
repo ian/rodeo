@@ -97,16 +97,21 @@ module.exports = function (config) {
 `
       )
 
+      await fsUtils.writeFileSync(
+        `${projectDir}/.gitignore`,
+        `
+node_modules
+dist
+.env*
+`
+      )
+
       await fs
         .copy(
           `${__dirname}/template/tailwind.config.js`,
           `${projectDir}/tailwind.config.js`
         )
         .catch(console.log)
-
-      // await fs
-      //   .copy(`${__dirname}/template/.gitignore`, `${projectDir}/.gitignore`)
-      //   .catch(console.log)
 
       await fs
         .copy(`${__dirname}/template/.env`, `${projectDir}/.env`)
