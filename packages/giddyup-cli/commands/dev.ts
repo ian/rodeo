@@ -90,6 +90,11 @@ export default () => {
     .on("change", handleSiteChange)
 
   chokidar
+    .watch(`${dir}/data/*.json`, { persistent: true })
+    .on("add", handleSiteChange)
+    .on("change", handleSiteChange)
+
+  chokidar
     .watch(`${dir}/styles/**/*`, { persistent: true })
     .on("add", handleStyleChange)
     .on("change", handleStyleChange)
