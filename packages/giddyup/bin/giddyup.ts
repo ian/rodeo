@@ -109,6 +109,10 @@ module.exports = function (config) {
         .catch(console.log)
 
       await fs
+        .copy(`${__dirname}/template/.env`, `${projectDir}/.env`)
+        .catch(console.log)
+
+      await fs
         .copy(
           `${__dirname}/template/netlify.toml`,
           `${projectDir}/netlify.toml`

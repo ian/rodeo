@@ -37,6 +37,8 @@
     "cp-file": "^9.0.0",
     "cross-spawn": "^7.0.3",
     "debounce": "^1.2.1",
+    "dotenv": "^8.2.0",
+    "envfile": "^6.14.0",
     "live-server": "^1.2.1",
     "ora": "^5.4.0",
     "postcss": "^8.2.8",
