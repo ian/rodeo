@@ -1,6 +1,6 @@
 {
   "name": "@giddyup/cli",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "description": "See https://github.com/tokenrodeo/Rodeo for full documentation.",
   "publishConfig": {
     "access": "public"
