@@ -1,6 +1,6 @@
 {
   "name": "giddyup",
-  "version": "0.0.23",
+  "version": "0.0.24",
   "description": "See https://github.com/tokenrodeo/Rodeo for full documentation.",
   "bin": {
     "giddyup": "./dist/giddyup.js"
