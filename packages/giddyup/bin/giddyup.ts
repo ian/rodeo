@@ -189,7 +189,7 @@ module.exports = function (config) {
       console.log("    Builds the app for production")
       console.log()
       console.log("  " + chalk.blueBright("yarn tokens"))
-      console.log("    Update tokens for wallet address")
+      console.log("    Update tokens for wallet address using Opensea API")
       console.log()
       console.log("  " + chalk.blueBright("yarn ipfs"))
       console.log("    Deploy your site to IPFS using Pinata")

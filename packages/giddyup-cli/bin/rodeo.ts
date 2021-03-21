@@ -30,14 +30,14 @@ program
 
 program
   .command("tokens")
-  .description("Grab tokens from OpenSea API")
+  .description("Update tokens for wallet address using Opensea API")
   .action((source, destination) => {
     TokenCommand()
   })
 
 program
   .command("ipfs")
-  .description("Deploy site to IPFS")
+  .description("Deploy your site to IPFS using Pinata")
   .action((source, destination) => {
     IPFSCommand()
   })
