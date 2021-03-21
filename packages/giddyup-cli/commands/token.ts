@@ -28,9 +28,9 @@ const formatTokens = (tokenArray, owner) => {
       name: ufT.name,
       hidden: false,
       private: false,
-      description: ufT.description || null,
-      collection: ufT.collection.name || null,
-      created_by: ufT.creator.address || null,
+      description: ufT.description,
+      collection: ufT.collection?.name,
+      created_by: ufT.creator?.address,
       owned_by: owner,
       created_by_owner: ufT.creator == owner,
       properties: ufT.traits,
@@ -86,7 +86,7 @@ const storeData = (data, path) => {
 const syncData = () => {
   let savedTokens = readData(output) || []
   let owner = isEthAddress(process.argv[3])
-  let force_overwrite = process.argv[3] == "-f"
+  let force_overwrite = true
   let uri =
     "https://api.opensea.io/api/v1/assets?&order_direction=desc&offset=0&limit=100&owner=" +
     owner
@@ -120,13 +120,6 @@ const syncData = () => {
     })
 }
 
-<<<<<<< HEAD
 let output = "./rodeo.json"
-=======
-let owner = isEthAddress(process.argv[2])
-let force_overwrite = process.argv[3] == '-f'
-let uri = 'https://api.opensea.io/api/v1/assets?&order_direction=desc&offset=0&limit=100&owner=' + owner
-let output = './rodeo.json'
->>>>>>> 371532db1f05d3a16637873cbb3e4e04798d0446
 
 export default syncData
