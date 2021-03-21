@@ -1,35 +1,17 @@
-import ora from "ora"
 import { spawn } from "child_process"
 
 export default async () => {
-  console.log("Building ...")
+  await spawnAsync("yarn", ["build"], {
+    stdio: "inherit",
+  }).catch((err) => {
+    console.error(err)
+  })
 
-  const invocations = [
-    [
-      `${__dirname}/../../node_modules/.bin/postcss`,
-      "styles/main.css",
-      "-d",
-      "dist/css/",
-      "--config",
-      `${__dirname}/../postcss.config.js`,
-    ],
-    [
-      `${__dirname}/../../node_modules/.bin/eleventy`,
-      "--quiet",
-      "--config",
-      `rodeo.js`,
-    ],
-  ]
-  for (const [program, ...args] of invocations) {
-    await spawnAsync(program, args, {
-      stdio: "inherit",
-    }).catch((err) => {
-      console.error(err)
-    })
-  }
-
-  console.log("DONE")
-  console.log()
+  await spawnAsync(`${__dirname}/../../node_modules/.bin/ipd`, [`dist`], {
+    stdio: "inherit",
+  }).catch((err) => {
+    console.error(err)
+  })
 }
 
 // @todo - dry this up

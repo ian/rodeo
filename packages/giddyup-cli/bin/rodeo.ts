@@ -4,6 +4,7 @@ import { Command } from "commander"
 import pkg from "../package.json"
 import BuildCommand from "../commands/build"
 import DevCommand from "../commands/dev"
+import IPFSCommand from "../commands/ipfs"
 import TokenCommand from "../commands/tokens"
 
 // "clean": "rm -rf _site",
@@ -32,6 +33,13 @@ program
   .description("Grab tokens from OpenSea API")
   .action((source, destination) => {
     TokenCommand()
+  })
+
+program
+  .command("ipfs")
+  .description("Deploy site to IPFS")
+  .action((source, destination) => {
+    IPFSCommand()
   })
 
 program.parse(process.argv)
