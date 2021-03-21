@@ -8,19 +8,35 @@ import ora from "ora"
 import spawn from "cross-spawn"
 import inquirer from "inquirer"
 
-
 const isEthAddress = (address) => {
-    if ((/^(0x){1}[0-9a-fA-F]{40}$/i.test(address)) == false) {
-        console.log('Enter a valid wallet address.')
-        return process.exit(1)
-    } else {
-        return address
-    }
+  if (/^(0x){1}[0-9a-fA-F]{40}$/i.test(address) == false) {
+    console.log("Enter a valid wallet address.")
+    return process.exit(1)
+  } else {
+    return address
+  }
 }
 
 ;(async () => {
   console.log()
-  console.log("RODEO BANNER")
+  console.log(`
+                                           
+                             .',,,;;;;'      ,clllllll;.    .;:c:,.      
+  ...'',;,.      'okOOko'    ,OWWWWWWWNO;    :XMMWXXXNO'  .dXWXKNWKo.    
+.dKKXNNWWWK:   .lXMWXNMMK;   .xMMXd:cOWMK;   '0MMO,...'   lNMXc.lNMX:    
+ oWMMX00NMMk.  ,KMWd.cXMWo   .dWM0'  :NMNc   '0MMk'..''   oWMK, :XMNc    
+ cNMNl..kMMO.  :XMNc '0MWo   .dMM0'  :XMWd.  cXMMNKKXNx. 'kWMK, :XMWx.   
+ cNMNc .kMMO.  :XMNc '0MMO'  ;0MM0'  :XMWk.  cXMMXxoodc. .dWM0, :XMNc    
+ cNMWkcdXMWx. .xWMNc '0MM0,  'OMM0'  :XMNl   '0MMx.   .   lWMK:.lNMX:    
+.dWMMMMMMNx.  .oNMNc '0MWd   .xMM0'  cNMX:   '0MMKdodkk,  'OWWXKNWXd.    
+'kWMWWWMMk.    :XMNc '0MWo   .xMMXxloKWNd.   :KWNXKK0Od'   .,clll:'      
+ cNMNxkWMNo.   ;XMWx:dNMX:   .OMMWWNNKk:.    ';,'...                     
+ cNMNc.xWMNo.  .xWMMWMNO:    'llc;,'..                                   
+ cNMNc 'OMMNo.  .:odoc,.                                                 
+ lWMWx..oOkdc.                                                           
+.okdl;.                                                                  
+                                                                                                     
+`)
   console.log()
 
   inquirer
@@ -34,7 +50,7 @@ const isEthAddress = (address) => {
         type: "input",
         name: "walletAddress",
         message: "Enter a wallet address.",
-      }
+      },
     ])
     .then(async (answers) => {
       const dir = process.cwd()

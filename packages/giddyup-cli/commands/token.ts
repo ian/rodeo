@@ -120,6 +120,6 @@ const syncData = () => {
     })
 }
 
-let output = "./rodeo.json"
+let output = "./data/rodeo.json"
 
 export default syncData
