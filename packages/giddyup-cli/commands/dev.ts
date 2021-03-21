@@ -1,11 +1,22 @@
 import chokidar from "chokidar"
 import debounce from "debounce"
-// import ora from "ora"
 import spawn from "cross-spawn"
 
-const handleDirChange = debounce(async () => {
+async function startServer() {
+  return spawnAsync(
+    `${__dirname}/../../node_modules/.bin/http-server`,
+    ["./dist"],
+    {
+      stdio: "inherit",
+    }
+  ).catch((err) => {
+    console.error(err)
+  })
+}
+
+const handleStyleChange = debounce(async (event) => {
   console.clear()
-  // const compiling = ora("Compiling").start()
+  console.log("Building Rodeo ...")
 
   const invocations = [
     [
@@ -16,9 +27,27 @@ const handleDirChange = debounce(async () => {
       "--config",
       `${__dirname}/../postcss.config.js`,
     ],
+  ]
+  for (const [program, ...args] of invocations) {
+    const res = await spawnAsync(program, args, {
+      stdio: "inherit",
+    }).catch((err) => {
+      console.error(err)
+    })
+  }
+
+  console.log()
+  console.log("Rodeo running on http://localhost:8080")
+})
+
+const handleSiteChange = debounce(async (event) => {
+  console.clear()
+  console.log("Building Rodeo ...")
+
+  const invocations = [
     [
       `${__dirname}/../../node_modules/.bin/eleventy`,
-      // "--quiet",
+      "--quiet",
       "--config",
       `rodeo.js`,
     ],
@@ -31,27 +60,24 @@ const handleDirChange = debounce(async () => {
     })
   }
 
-  // compiling.succeed("Compiled")
   console.log()
-
-  // startServer()
-  const res = await spawnAsync(
-    `${__dirname}/../../node_modules/.bin/http-server`,
-    ["./dist"],
-    {
-      stdio: "inherit",
-    }
-  ).catch((err) => {
-    console.error(err)
-  })
+  console.log("Rodeo running on http://localhost:8080")
 }, 300)
 
 export default () => {
   const dir = process.cwd()
   // console.log("Watching", dir)
+  startServer()
+
   chokidar
     .watch(`${dir}/site/**/*`, { persistent: true })
-    .on("all", handleDirChange)
+    .on("add", handleSiteChange)
+    .on("change", handleSiteChange)
+
+  chokidar
+    .watch(`${dir}/styles/**/*`, { persistent: true })
+    .on("add", handleStyleChange)
+    .on("change", handleStyleChange)
 }
 
 async function spawnAsync(program, args, options) {
