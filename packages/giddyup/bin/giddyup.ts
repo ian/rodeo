@@ -105,6 +105,17 @@ module.exports = function (config) {
         .catch(console.log)
 
       await fs
+        .copy(`${__dirname}/template/.gitignore`, `${projectDir}/.gitignore`)
+        .catch(console.log)
+
+      await fs
+        .copy(
+          `${__dirname}/template/netlify.toml`,
+          `${projectDir}/netlify.toml`
+        )
+        .catch(console.log)
+
+      await fs
         .copy(`${__dirname}/template/styles`, `${projectDir}/styles`)
         .catch(console.log)
 
@@ -167,16 +178,19 @@ module.exports = function (config) {
       console.log()
       console.log("Inside that directory, you can run several commands.")
       console.log()
-      console.log("  " + chalk.blueBright("rodeo dev"))
+      console.log("  " + chalk.blueBright("yarn dev"))
       console.log("    Start the development server")
       console.log()
-      console.log("  " + chalk.blueBright("rodeo build"))
+      console.log("  " + chalk.blueBright("yarn build"))
       console.log("    Builds the app for production")
+      console.log()
+      console.log("  " + chalk.blueBright("yarn tokens"))
+      console.log("    Update tokens for wallet address")
       console.log()
       console.log("We suggest that you begin by typing:")
       console.log()
       console.log("  " + chalk.yellowBright("cd" + " " + projectName))
-      console.log("  " + chalk.yellowBright("rodeo dev"))
+      console.log("  " + chalk.yellowBright("yarn dev"))
       console.log()
       console.log()
     })
