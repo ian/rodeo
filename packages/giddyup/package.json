@@ -1,0 +1,51 @@
+{
+  "name": "giddyup",
+  "version": "0.0.26",
+  "description": "See https://github.com/tokenrodeo/Rodeo for full documentation.",
+  "bin": {
+    "giddyup": "./dist/giddyup.js"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "dist/giddyup.js",
+  "types": "dist/giddyup.d.ts",
+  "files": [
+    "dist/**/*"
+  ],
+  "scripts": {
+    "build": "tsc && yarn dist",
+    "build:watch": "tsc-watch --onSuccess \"yarn dist\"",
+    "dist": "yarn dist:chmod && yarn dist:copy",
+    "dist:copy": "cp -r template dist",
+    "dist:chmod": "chmod +x ./dist/giddyup.js",
+    "cli": "ts-node ./bin/giddyup.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tokenrodeo/Rodeo.git"
+  },
+  "author": "Ian Hunter <ian@01.studio>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tokenrodeo/Rodeo/issues"
+  },
+  "homepage": "https://github.com/tokenrodeo/Rodeo#readme",
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "commander": "^7.1.0",
+    "cross-spawn": "^7.0.3",
+    "fs-extra": "^9.1.0",
+    "fs-utils": "^0.7.0",
+    "inquirer": "^8.0.0",
+    "ora": "^5.4.0",
+    "slugify": "^1.4.7"
+  },
+  "gitHead": "12fe92cf38ee128220482b7d545a4c443e99ee51",
+  "devDependencies": {
+    "@types/node": "^14.14.35",
+    "ts-node": "^9.1.1",
+    "tsc-watch": "^4.2.9",
+    "typescript": "^4.2.3"
+  }
+}

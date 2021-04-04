@@ -1,0 +1,132 @@
+---
+pagination:
+  data: tokens
+  size: 1
+  alias: token
+permalink: "tokens/{{ token.id }}/"
+tags:
+- token
+---
+
+{{!-- DO NOT MESS WITH THE ABOVE --}}
+
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>{{meta.projectName}} — {{token.name}}</title>
+    <link rel="stylesheet" href="../../css/main.css">
+  </head>
+
+  <body class="py-8 px-6">
+    {{> header}}
+  
+    <div class="grid max-w-screen-xl mx-auto md:grid-cols-2">
+
+      <div class="md:mr-4">
+        <img class="w-full" src="{{token.media.image_url}}" alt="{{token.name}}">
+      </div>
+      <div class="flow-root mt-6 md:ml-4">
+        {{#if token.collection}}
+         <p class="text-gray-500 font-semibold text-sm leading-5">{{token.collection}}</p>
+        {{/if}}
+        <h1 class=" font-extrabold text-5xl leading-none">{{token.name}}</h1>
+
+        <div class="relative pb-5 border-b border-gray-200 sm:pb-0">
+          <div class="mt-4">
+            <!-- Dropdown menu on small screens -->
+            <div class="sm:hidden">
+              <label for="selected-tab" class="sr-only">Select a tab</label>
+              <select id="selected-tab" name="selected-tab" class="block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
+                <option selected>Info</option>
+
+                <option>About</option>
+
+                <option>Details</option>
+              </select>
+            </div>
+            <!-- Tabs at small breakpoint and up -->
+            <div class="hidden sm:block">
+              <nav class="-mb-px flex space-x-8">
+                <a href="#" class="border-indigo-500 text-indigo-600 whitespace-nowrap pb-4 px-1 border-b-2 font-medium text-sm" aria-current="page">
+                  Info
+                </a>
+
+                <a href="#" class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap pb-4 px-1 border-b-2 font-medium text-sm">
+                  About
+                </a>
+
+                <!-- Current: "border-indigo-500 text-indigo-600", Default: "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300" -->
+                <a href="#" class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap pb-4 px-1 border-b-2 font-medium text-sm">
+                  Details
+                </a>
+              </nav>
+            </div>
+          </div>
+        </div>
+
+        <ul class="my-0 divide-y divide-gray-200">
+          <li class="py-5">
+            <div class="relative focus-within:ring-2 focus-within:ring-indigo-500">
+              <h3 class="text-sm font-semibold text-gray-800">
+                <p>
+                  <!-- Extend touch target to entire panel -->
+                  <span class="absolute inset-0" aria-hidden="true"></span>
+                  Owner
+                </p>
+              </h3>
+              <a class="mt-1 text-sm text-gray-500 line-clamp-2 hover:underline focus:outline-none" href="https://etherscan.io/address/{{token.owned_by}}" target="_blank">
+                  <span class="absolute inset-0" aria-hidden="true"></span>
+                  {{token.owned_by}}
+                  <svg class="w-5 inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+</svg>
+              </a>
+            </div>
+          </li>
+  
+          <li class="py-5">
+            <div class="relative focus-within:ring-2 focus-within:ring-indigo-500">
+              <h3 class="text-sm font-semibold text-gray-800">
+                <p>
+                  <!-- Extend touch target to entire panel -->
+                  <span class="absolute inset-0" aria-hidden="true"></span>
+                  Creator
+                </p>
+              </h3>
+              <a class="mt-1 text-sm text-gray-500 line-clamp-2 hover:underline focus:outline-none" href="https://etherscan.io/address/{{token.created_by}}" target="_blank">
+                  <span class="absolute inset-0" aria-hidden="true"></span>
+                  {{token.created_by}}
+                  <svg class="w-5 inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </a>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  
+    {{!-- <p>ID: {{token.id}}</p>
+    <p>Hidden: {{token.hidden}}</p>
+    <p>Private: {{token.private}}</p>
+    <p>Featured: {{token.featured}}</p>
+    <p>Name: {{token.name}}</p>
+    <p>Token ID: {{token.token_id}}</p>
+    <p>Description: {{token.description}}</p>
+    <p>Collection: {{token.collection}}</p>
+    <p>Created By: {{token.created_by}}</p>
+    <p>Owned By: {{token.owned_by}}</p>
+    <p>Created By Owner: {{token.created_by_owner}}</p>
+    <p>Meta Title: {{token.meta_title}}</p>
+    <p>Meta Description: {{token.meta_description}}</p>
+    <p>Contract Address: {{token.contract.contract_address}}</p>
+    <p>Contract Name: {{token.contract.contract_name}}</p>
+    <p>Contract Symbol: {{token.contract.contract_symbol}}</p>
+    <p>Contract Description: {{token.contract.contract_description}}</p>
+    <p>Contract External URL: {{token.contract.contract_external_url}}</p>
+    <p>Media Image URL: {{token.media.image_url}}</p>
+    <p>Media Video URL: {{token.media.video_url}}</p>
+    <p>Media Audio URL: {{token.media.audio_url}}</p> --}}
+  </body>
+</html>
