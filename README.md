@@ -11,7 +11,7 @@ Rodeo is a static site generator (SSG) that builds a gallery of your collected a
 Use the giddyup package to start the installation process
 
 ```
-npx giddyup
+npm -i giddyup
 ```
 
 Enter project details
