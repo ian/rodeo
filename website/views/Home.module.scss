@@ -1,0 +1,54 @@
+.subscriptionWrapper {
+  min-height: 100vh;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: rgb(230, 106, 73);
+  background: -moz-linear-gradient(
+    180deg,
+    rgba(230, 106, 73, 1) 0%,
+    rgba(241, 177, 97, 1) 35%,
+    rgba(245, 204, 106, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    180deg,
+    rgba(230, 106, 73, 1) 0%,
+    rgba(241, 177, 97, 1) 35%,
+    rgba(245, 204, 106, 1) 100%
+  );
+  background: linear-gradient(
+    180deg,
+    rgba(230, 106, 73, 1) 0%,
+    rgba(241, 177, 97, 1) 35%,
+    rgba(245, 204, 106, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e66a49",endColorstr="#f5cc6a",GradientType=1);
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+    background: url('../assets/login-bg.png') no-repeat 0 100%;
+    background-size: 100% auto;
+  }
+
+  .w1 {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
